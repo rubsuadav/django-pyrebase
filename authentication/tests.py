@@ -2,8 +2,7 @@ from django.test import TestCase
 from rest_framework.test import APIClient
 from rest_framework import status
 import json
-from exampleApp.firebase import auth
-from exampleProject.settings import firestore
+from exampleApp.firebase import auth, firestore
 
 
 def get_token(self):

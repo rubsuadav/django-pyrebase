@@ -1,6 +1,10 @@
 import pyrebase
 from dotenv import load_dotenv
 import os
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore as f
+from google.cloud.firestore_v1 import Client as FirestoreClient
 
 
 load_dotenv()
@@ -26,3 +30,9 @@ auth = firebase.auth()
 
 # Initialize Firebase Storage
 storage = firebase.storage()
+
+# Initialize Firebase Firestore
+firebase_admin.initialize_app(credentials.Certificate(
+    os.environ.get("GOOGLE_APPLICATION_CREDENTIALS2")))
+f.client()
+firestore = FirestoreClient()

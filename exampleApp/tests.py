@@ -1,7 +1,7 @@
 from django.test import TestCase
 from rest_framework.test import APIClient
 from rest_framework import status
-from exampleProject.settings import firestore
+from .firebase import firestore
 import json
 
 

@@ -2,10 +2,9 @@ from rest_framework import views
 from rest_framework.response import Response
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
-from exampleApp.firebase import auth
+from exampleApp.firebase import auth, firestore
 from exampleApp.validators import validate_register
 import re
-from exampleProject.settings import firestore
 
 
 class CsrfExemptMixin:
