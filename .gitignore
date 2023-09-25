@@ -1,0 +1,8 @@
+venv/
+env/
+.env
+__pycache__/
+serviceAccount.json
+.coverage
+htmlcov/
+coverage.xml
