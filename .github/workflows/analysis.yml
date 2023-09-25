@@ -9,13 +9,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@main
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: |
-          cd frontend
-          npm ci
       - name: Run Codacy Analysis CLI
         uses: codacy/codacy-analysis-cli-action@master
         with:

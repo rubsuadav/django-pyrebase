@@ -23,7 +23,7 @@ class JobView(CsrfExemptMixin, views.APIView):
                     page = int(page)
                     if int(page) < 1:  # Check if page is less than 1
                         return Response({"error": "Page must be greater or equal than 1"}, status=400)
-                except Exception as e:
+                except Exception:
                     return Response({"error": "Page must be an integer"}, status=400)
                 jobs = firestore.collection(u'jobs').order_by(
                     u'company', direction=Query.DESCENDING).limit(4).offset((int(page) - 1) * 4).stream()
