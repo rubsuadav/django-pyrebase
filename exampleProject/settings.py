@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore as f
+from google.cloud.firestore_v1 import Client as FirestoreClient
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -139,3 +144,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+firebase_admin.initialize_app(credentials.Certificate(
+    os.environ.get("GOOGLE_APPLICATION_CREDENTIALS2")))
+f.client()
+firestore = FirestoreClient()
