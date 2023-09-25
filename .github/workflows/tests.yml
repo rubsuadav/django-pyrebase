@@ -2,7 +2,7 @@ name: Python application tests and coverage
 
 on: [push]
 
-env: |
+env:
   GOOGLE_APPLICATION_CREDENTIALS2: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
   FIREBASE_API_KEY : ${{secrets.FIREBASE_API_KEY}}
   FIREBASE_AUTH_DOMAIN : ${{secrets.FIREBASE_AUTH_DOMAIN}}
