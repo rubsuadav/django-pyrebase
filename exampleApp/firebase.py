@@ -19,6 +19,7 @@ config = {
     "appId": os.getenv("FIREBASE_APP_ID"),
     "measurementId": os.getenv("FIREBASE_MEASUREMENT_ID"),
     "databaseURL": os.getenv("FIREBASE_DATABASE_URL"),
+    "serviceAccount": os.environ.get("GOOGLE_APPLICATION_CREDENTIALS2")
 }
 
 # Initialize Firebase
