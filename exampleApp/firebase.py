@@ -19,7 +19,6 @@ config = {
     "appId": os.getenv("FIREBASE_APP_ID"),
     "measurementId": os.getenv("FIREBASE_MEASUREMENT_ID"),
     "databaseURL": os.getenv("FIREBASE_DATABASE_URL"),
-    "serviceAccount": os.environ.get("GOOGLE_APPLICATION_CREDENTIALS2")
 }
 
 # Initialize Firebase
@@ -31,10 +30,11 @@ auth = firebase.auth()
 # Initialize Firebase Storage
 storage = firebase.storage()
 
-# Initialize Firebase Firestore only if it's not already initialized
+# Initialize Firebase only if it's not already initialized
+
 if not firebase_admin._apps:
     firebase_admin.initialize_app(credentials.Certificate(
         os.environ.get("GOOGLE_APPLICATION_CREDENTIALS2")))
-    firestore = FirestoreClient()
-else:
-    firestore = FirestoreClient()
+
+# Initialize Firebase Firestore
+firestore = FirestoreClient()

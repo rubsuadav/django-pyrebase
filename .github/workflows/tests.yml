@@ -4,6 +4,7 @@ on: [push]
 
 env:
   GOOGLE_APPLICATION_CREDENTIALS2: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+  FIREBASE_API_KEY : ${{secrets.FIREBASE_API_KEY}}
 
 jobs:
   build:
