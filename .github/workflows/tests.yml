@@ -2,10 +2,6 @@ name: Python application tests and coverage
 
 on: [push]
 
-env: |
-  GOOGLE_APPLICATION_CREDENTIALS2: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
-  FIREBASE_API_KEY: ${{secrets.FIREBASE_API_KEY}}
-
 jobs:
   build:
     name: Tests and coverage
@@ -22,16 +18,5 @@ jobs:
           pip install -r requirements.txt
           pip install codacy-coverage
           pip install -U drf-yasg
-      - name: Run tests
-        run: |
-          echo "$GOOGLE_APPLICATION_CREDENTIALS2" > firebase-credentials.json
-          export GOOGLE_APPLICATION_CREDENTIALS2=firebase-credentials.json
-          echo "FIREBASE_API_KEY=${FIREBASE_API_KEY}" > .env
-          source .env
-          coverage run --branch --source=. ./manage.py test  --keepdb 
-          coverage xml
       - name: Codacy Coverage Reporter
-        uses: codacy/codacy-coverage-reporter-action@v1
-        with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: coverage.xml
+        run: python-codacy-coverage -t ${{ secrets.CODACY_PROJECT_TOKEN }} -r coverage.xml
