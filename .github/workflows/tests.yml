@@ -4,7 +4,6 @@ on: [push]
 
 env:
   GOOGLE_APPLICATION_CREDENTIALS2: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
-  FIREBASE_API_KEY : ${{secrets.FIREBASE_API_KEY}}
 
 jobs:
   build:
@@ -26,6 +25,7 @@ jobs:
         run: |
           echo "$GOOGLE_APPLICATION_CREDENTIALS2" > firebase-credentials.json
           export GOOGLE_APPLICATION_CREDENTIALS2=firebase-credentials.json
+          export FIREBASE_API_KEY=${{ secrets.FIREBASE_API_KEY }}
           coverage run --branch --source=. ./manage.py test  --keepdb 
           coverage xml
       - name: Codacy Coverage Reporter
