@@ -1,5 +1,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8d73f5ea006a4691a973f2fdaaaf4ccc)](https://app.codacy.com/gh/rubsuadav/django-pyrebase/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/8d73f5ea006a4691a973f2fdaaaf4ccc)](https://app.codacy.com/gh/rubsuadav/django-pyrebase/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
+
 [![Codacy Analysis CLI](https://github.com/rubsuadav/django-pyrebase/actions/workflows/analysis.yml/badge.svg)](https://github.com/rubsuadav/django-pyrebase/actions/workflows/analysis.yml)
 
 [![Python application tests and coverage](https://github.com/rubsuadav/django-pyrebase/actions/workflows/tests.yml/badge.svg)](https://github.com/rubsuadav/django-pyrebase/actions/workflows/tests.yml)
