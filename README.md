@@ -6,7 +6,7 @@
 
 [![Python application tests and coverage](https://github.com/rubsuadav/django-pyrebase/actions/workflows/tests.yml/badge.svg)](https://github.com/rubsuadav/django-pyrebase/actions/workflows/tests.yml)
 
-[![wakatime](https://wakatime.com/badge/github/rubsuadav/django-pyrebase.svg)](https://wakatime.com/badge/github/rubsuadav/django-pyrebase)
+[![wakatime](https://wakatime.com/badge/github/rubsuadav/django-pyrebase.svg)](https://wakatime.com/badge/github/rubsuadav/django-pyrebase.svg)
 
 ## To run the app first you need to create a virtual environment and install the requirements
 
