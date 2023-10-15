@@ -6,6 +6,8 @@
 
 [![Python application tests and coverage](https://github.com/rubsuadav/django-pyrebase/actions/workflows/tests.yml/badge.svg)](https://github.com/rubsuadav/django-pyrebase/actions/workflows/tests.yml)
 
+[![wakatime](https://wakatime.com/badge/user/018b243a-90cb-403a-8ca1-4ee4f5c4d9e9/project/018b338d-f5b9-465b-b690-7d97464d17a2.svg)](https://wakatime.com/badge/user/018b243a-90cb-403a-8ca1-4ee4f5c4d9e9/project/018b338d-f5b9-465b-b690-7d97464d17a2)
+
 ## To run the app first you need to create a virtual environment and install the requirements
 
 ## To create a virtual environment run the following command
