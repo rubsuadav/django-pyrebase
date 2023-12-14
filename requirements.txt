@@ -10,3 +10,4 @@ numpy == 1.26.0
 Woosh == 0.0.1
 tqdm == 4.66.1
 pandas == 2.1.1
+gunicorn == 21.2.0
