@@ -30,7 +30,8 @@ auth = firebase.auth()
 storage = firebase.storage()
 
 # Initialize Firebase only if it's not already initialized
-firebase_admin.initialize_app()
+if not firebase_admin._apps:
+    firebase_admin.initialize_app()
 
 # Initialize Firebase Firestore
 db = firestore.client()
