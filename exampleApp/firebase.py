@@ -2,8 +2,9 @@ import pyrebase
 from dotenv import load_dotenv
 import os
 import firebase_admin
-from firebase_admin import firestore
-
+from google.cloud.firestore_v1 import Client as FirestoreClient
+import base64
+from firebase_admin import credentials
 
 load_dotenv()
 
@@ -30,8 +31,14 @@ auth = firebase.auth()
 storage = firebase.storage()
 
 # Initialize Firebase only if it's not already initialized
+credentials_base64 = os.getenv("GOOGLE_APPLICATION_CREDENTIALS_BASE64")
+credentials_bytes = base64.b64decode(credentials_base64)
+with open('temp.json', 'wb') as temp_file:
+    temp_file.write(credentials_bytes)
+cred = credentials.Certificate('temp.json')
+
 if not firebase_admin._apps:
-    firebase_admin.initialize_app()
+    firebase_admin.initialize_app(cred)
 
 # Initialize Firebase Firestore
-db = firestore.client()
+db = FirestoreClient()

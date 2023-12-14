@@ -6,3 +6,4 @@ serviceAccount.json
 .coverage
 htmlcov/
 .firebase
+temp.json
