@@ -2,7 +2,7 @@ from rest_framework import views
 from rest_framework.response import Response
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
-from .firebase import firestore
+from .firebase import db as firestore
 from .validators import validate_data
 from google.cloud.firestore_v1 import Query
 
