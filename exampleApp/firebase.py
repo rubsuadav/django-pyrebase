@@ -41,4 +41,4 @@ if not firebase_admin._apps:
     firebase_admin.initialize_app(cred)
 
 # Initialize Firebase Firestore
-db = FirestoreClient()
+db = FirestoreClient.from_service_account_json('temp.json')
