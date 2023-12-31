@@ -7,10 +7,22 @@ import json
 
 def get_token(self):
     response = self.client.post('/login', data=json.dumps({
-        "email": "rsuarezdavid@gmail.com",
-        "password": "16febrero"
+        "email": "raul@gmail.com",
+        "password": "password1234"
     }), content_type='application/json')
-    return response.data['token']
+
+    if response.status_code == status.HTTP_200_OK:
+        return response.data['token']
+
+    response1 = self.client.post('/register', data=json.dumps({
+        "name": "David",
+        "last_name": "Suarez",
+        "phone": "628014485",
+        "email": "raul@gmail.com",
+        "password": "password1234"
+    }), content_type='application/json')
+
+    return response1.data['message'].split(' ')[-1][:-1]
 
 
 class JobTestCase(TestCase):
